@@ -1,0 +1,31 @@
+RUN	com.gatling.tests.API.APItesting	apitesting	1681311544601	API	3.6.1
+USER	Get User by API	START	1681311545842
+REQUEST		Get Single User	1681311545893	1681311546118	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	START	1681311546327
+REQUEST		Get Single User	1681311546328	1681311546465	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	START	1681311546816
+REQUEST		Get Single User	1681311546817	1681311546966	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	END	1681311547292
+USER	Get User by API	START	1681311547321
+USER	Get User by API	END	1681311547479
+REQUEST		Get Single User	1681311547321	1681311547492	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	START	1681311547856
+USER	Get User by API	END	1681311547982
+REQUEST		Get Single User	1681311547857	1681311548137	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	START	1681311548310
+REQUEST		Get Single User	1681311548311	1681311548459	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	END	1681311548499
+USER	Get User by API	START	1681311548813
+REQUEST		Get Single User	1681311548814	1681311548939	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	END	1681311549143
+USER	Get User by API	START	1681311549318
+REQUEST		Get Single User	1681311549318	1681311549441	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	END	1681311549477
+USER	Get User by API	START	1681311549822
+USER	Get User by API	END	1681311549951
+REQUEST		Get Single User	1681311549823	1681311549956	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	START	1681311550315
+REQUEST		Get Single User	1681311550315	1681311550437	KO	jsonPath($.x.data.first_name).find.is(Janet), but actually found nothing
+USER	Get User by API	END	1681311550459
+USER	Get User by API	END	1681311550966
+USER	Get User by API	END	1681311551442

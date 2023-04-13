@@ -1,0 +1,10 @@
+{
+  "simulation": "com.gatling.tests.Orange",
+  "simulationId": "orange",
+  "start": 1681207017284,
+  "description": "Test run 1",
+  "scenarios": ["Orange"],
+  "assertions": [
+
+  ]
+}

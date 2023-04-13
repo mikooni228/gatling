@@ -1,0 +1,10 @@
+{
+  "simulation": "com.gatling.tests.API.APICRUD",
+  "simulationId": "apicrud",
+  "start": 1681376883650,
+  "description": "1",
+  "scenarios": ["Create User", "Update User"],
+  "assertions": [
+
+  ]
+}

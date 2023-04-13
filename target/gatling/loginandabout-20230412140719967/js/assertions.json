@@ -1,0 +1,10 @@
+{
+  "simulation": "com.gatling.tests.LoginandAbout",
+  "simulationId": "loginandabout",
+  "start": 1681308439967,
+  "description": "Login and about orange",
+  "scenarios": ["LoginandAbout"],
+  "assertions": [
+
+  ]
+}

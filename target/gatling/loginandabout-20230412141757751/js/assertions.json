@@ -1,0 +1,10 @@
+{
+  "simulation": "com.gatling.tests.LoginandAbout",
+  "simulationId": "loginandabout",
+  "start": 1681309077751,
+  "description": "+Rampup",
+  "scenarios": ["Users", "Admins"],
+  "assertions": [
+
+  ]
+}
