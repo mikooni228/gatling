@@ -1,0 +1,10 @@
+{
+  "simulation": "com.gatling.tests.RecordedSimulation",
+  "simulationId": "recordedsimulation",
+  "start": 1681827257134,
+  "description": "123",
+  "scenarios": ["RecordedSimulation"],
+  "assertions": [
+
+  ]
+}
