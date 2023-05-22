@@ -1,11 +1,14 @@
+//Define an optional package to hold the Scala class
 package com.gatling.tests.API
 
+//required imports
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
+//class declaration
 class APICRUD extends Simulation{
 
-  //protocol
+  //define protocol
   val httpProtocol =http
     .baseUrl("https://reqres.in/api")
 
@@ -14,16 +17,24 @@ class APICRUD extends Simulation{
   val createUserScn = scenario("Create User")
     .exec(
       http("Create User Request")
-        .post("/users")
-        .header("content-type", "applications/json")
+        .post("/users") //http method
+        .header("content-type", "applications/json") //header configuration
         .asJson
-        .body(RawFileBody("data/user_data.json"))
+        .body(RawFileBody("data/user_data.json")) //path to file with data
+
+        //another variant of body
+
+        // .body(StringBody(
+        //          """
+        //            |{"name":"bob","job":"painter"}
+        //          """.stripMargin)).asJson)
+
         .check(
-          status is 201,
-          jsonPath("$.name") is "morpheus"
+          status is 201, // check the status code
+          jsonPath("$.name") is "morpheus" //check the value in json body
         )
     )
-    .pause("2")
+    .pause("2") // pause to simulate the real user behavior
 
   val updateUserScn = scenario("Update User Put")
     .exec(
