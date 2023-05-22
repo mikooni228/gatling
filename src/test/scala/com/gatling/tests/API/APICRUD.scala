@@ -14,8 +14,8 @@ class APICRUD extends Simulation{
 
   //scenario
 
-  val createUserScn = scenario("Create User")
-    .exec(
+  val createUserScn = scenario("Create User") //defined the scenario
+    .exec( //method is used to execute an action
       http("Create User Request")
         .post("/users") //http method
         .header("content-type", "applications/json") //header configuration
@@ -72,6 +72,7 @@ class APICRUD extends Simulation{
     updateUserScn.inject(rampUsers(9).during(4)),
     updateUserScn1.inject(rampUsers(11).during(6)),
     deleteUserScn.inject(rampUsers(20).during(13))
+    // Injects a given number of users distributed evenly on a time window of a given duration.
   ).protocols(httpProtocol)
 
 
