@@ -8,7 +8,7 @@ import io.gatling.http.Predef._
 //class declaration
 class APICRUD extends Simulation{
 
-  //define protocol
+  //define http protocol and base url
   val httpProtocol =http
     .baseUrl("https://reqres.in/api")
 
@@ -19,7 +19,7 @@ class APICRUD extends Simulation{
       http("Create User Request")
         .post("/users") //http method
         .header("content-type", "applications/json") //header configuration
-        .asJson
+        .asJson //request body type
         .body(RawFileBody("data/user_data.json")) //path to file with data
 
         //another variant of body
@@ -40,7 +40,8 @@ class APICRUD extends Simulation{
     .exec(
       http("Update User Request Put")
         .put("/users/2")
-        .body(RawFileBody("data/user_data.json")).asJson
+        .body(RawFileBody("data/user_data.json"))
+        .asJson
         .check(
           status is 200,
           jsonPath("$.name") is "morpheus"
@@ -52,7 +53,8 @@ class APICRUD extends Simulation{
     .exec(
       http("Update User Request Patch")
         .patch("/users/2")
-        .body(RawFileBody("data/user_data.json")).asJson
+        .body(RawFileBody("data/user_data.json"))
+        .asJson
         .check(
           status is 201,
           jsonPath("$.job") is "leader"
@@ -66,14 +68,14 @@ class APICRUD extends Simulation{
         .delete("/users/2")
         .check(status is 204)
     )
-  //setup
+  //setup section
   setUp(
     createUserScn.inject(rampUsers(15).during(10)),
     updateUserScn.inject(rampUsers(9).during(4)),
     updateUserScn1.inject(rampUsers(11).during(6)),
-    deleteUserScn.inject(rampUsers(20).during(13))
-    // Injects a given number of users distributed evenly on a time window of a given duration.
-  ).protocols(httpProtocol)
+    deleteUserScn.inject(rampUsers(20).during(13)) // Injects a given number of users distributed evenly on a time window of a given duration.
+  )
+    .protocols(httpProtocol) //connect http protocol
 
 
 }
